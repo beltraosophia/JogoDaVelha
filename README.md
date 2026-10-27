@@ -25,8 +25,6 @@ JogoDaVelha/
 ├── .gitignore
 └── README.md
 ```
-> **Nota sobre a estrutura:**  
-> A organização dos módulos e cabeçalhos direto na raiz foi adotada para atender estritamente aos critérios de entrega e compilação direta da disciplina acadêmica, priorizando a compatibilidade com os roteiros de avaliação.
 
 ## Modos de Jogo
 
