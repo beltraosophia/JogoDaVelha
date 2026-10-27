@@ -12,4 +12,3 @@ void jogaIA(JogadorIA *ia, Tabuleiro *tabuleiro) {
     if (aplicaRegra5(tabuleiro, ia->tipo)) return;
     aplicaRegra6(tabuleiro, ia->tipo);
 }
-
