@@ -10,3 +10,4 @@ typedef struct {
 void jogaIA(JogadorIA *ia, Tabuleiro *tabuleiro);
 
 #endif
+
