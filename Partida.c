@@ -3,8 +3,20 @@
 
 void configuraJogadores(Partida *partida) {
     inicializaTabuleiro(&partida->tabuleiro);
+
+    printf("=== JOGO DA VELHA ===\n");
+    printf("1 - Humano vs Humano\n");
+    printf("2 - Humano vs Computador (IA)\n");
+    printf("Escolha o modo: ");
+    scanf("%d", &partida->modoJogo);
+
     partida->jogador1.tipo = 4;
-    partida->jogador2.tipo = 1;
+
+    if (partida->modoJogo == 1) {
+        partida->jogador2.tipo = 1;
+    } else {
+        partida->ia.tipo = 1;
+    }
 }
 
 void inicia(Partida *partida) {
@@ -15,10 +27,14 @@ void inicia(Partida *partida) {
         desenha(&partida->tabuleiro);
 
         if (turno == 1) {
-            joga(&partida->jogador1, &partida->tabuleiro);
+            jogaTeclado(&partida->jogador1, &partida->tabuleiro);
             turno = 2;
         } else {
-            joga(&partida->jogador2, &partida->tabuleiro);
+            if (partida->modoJogo == 1) {
+                jogaTeclado(&partida->jogador2, &partida->tabuleiro);
+            } else {
+                jogaIA(&partida->ia, &partida->tabuleiro);
+            }
             turno = 1;
         }
 
@@ -28,10 +44,14 @@ void inicia(Partida *partida) {
     desenha(&partida->tabuleiro);
 
     if (resultado == 4) {
-        printf("Jogador X venceu!\n");
+        printf("Fim de jogo: Jogador X venceu!\n");
     } else if (resultado == 1) {
-        printf("Jogador O venceu!\n");
+        if (partida->modoJogo == 2) {
+            printf("Fim de jogo: Computador (O) venceu!\n");
+        } else {
+            printf("Fim de jogo: Jogador O venceu!\n");
+        }
     } else if (resultado == 0) {
-        printf("Empate!\n");
+        printf("Fim de jogo: Empate!\n");
     }
 }
