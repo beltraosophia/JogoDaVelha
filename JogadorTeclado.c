@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "JogadorTeclado.h"
 
-void joga(JogadorTeclado *jogador, Tabuleiro *tabuleiro) {
+void jogaTeclado(JogadorTeclado *jogador, Tabuleiro *tabuleiro) {
     int linha, coluna;
     int jogadaValida = 0;
 
