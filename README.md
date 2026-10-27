@@ -53,5 +53,7 @@ A validação de vitória ocorre somando as três linhas, as três colunas e as 
 
 
 ## Compilação e Execução
-[EM CONSTRUÇÃO]
-
+```bash
+gcc -Wall -Wextra main.c Tabuleiro.c JogadorTeclado.c JogadorIA.c Regra.c Partida.c -o jogodavelha
+./jogodavelha
+``` 
